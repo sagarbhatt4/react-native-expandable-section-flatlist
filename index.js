@@ -83,6 +83,10 @@ class ExpandableList extends Component {
   }
 
   _onPress = (i) => {
+
+    if(this.props.openOptions.includes(i)){
+      return
+    }
     this.setState((state) => {
       const memberOpened = new Map(state.memberOpened);
       memberOpened.set(i, !memberOpened.get(i)); // toggle
